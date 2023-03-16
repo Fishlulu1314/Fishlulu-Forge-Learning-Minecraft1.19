@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package net.fishlulu.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
