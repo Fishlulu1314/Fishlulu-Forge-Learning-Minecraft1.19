@@ -3,6 +3,7 @@ package net.fishlulu.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.fishlulu.tutorialmod.block.ModBlocks;
 import net.fishlulu.tutorialmod.item.ModItems;
+import net.fishlulu.tutorialmod.villager.ModVillagers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -34,6 +35,7 @@ public class TutorialMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
 
 
@@ -49,7 +51,10 @@ public class TutorialMod
     {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
-        LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+        event.enqueueWork(()->{
+            ModVillagers.registerPOIs();
+        });
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

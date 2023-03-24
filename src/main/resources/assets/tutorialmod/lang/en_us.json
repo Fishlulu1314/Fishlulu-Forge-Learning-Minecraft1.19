@@ -12,7 +12,8 @@
   "block.tutorialmod.zircon_lamp": "Zircon Lamp",
   "block.tutorialmod.blueberry_crop": "Blueberry Crop",
 
-  "itemGroup.tutorialtab": "TutorialMod"
+  "itemGroup.tutorialtab": "TutorialMod",
+  "entity.minecraft.villager.jumpy_master": "Jumpy Master"
 
 
 
