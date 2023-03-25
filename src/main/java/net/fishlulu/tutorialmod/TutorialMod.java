@@ -3,6 +3,7 @@ package net.fishlulu.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.fishlulu.tutorialmod.block.ModBlocks;
 import net.fishlulu.tutorialmod.item.ModItems;
+import net.fishlulu.tutorialmod.painting.ModPaintings;
 import net.fishlulu.tutorialmod.villager.ModVillagers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -36,7 +37,7 @@ public class TutorialMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
-
+        ModPaintings.register(modEventBus);
 
 
         // Register the commonSetup method for modloading
