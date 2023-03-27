@@ -5,6 +5,8 @@ import net.fishlulu.tutorialmod.block.ModBlocks;
 import net.fishlulu.tutorialmod.item.ModItems;
 import net.fishlulu.tutorialmod.painting.ModPaintings;
 import net.fishlulu.tutorialmod.villager.ModVillagers;
+import net.fishlulu.tutorialmod.world.feature.ModConfiguredFeatures;
+import net.fishlulu.tutorialmod.world.feature.ModPlacedFeatures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -38,6 +40,8 @@ public class TutorialMod
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModPaintings.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
 
         // Register the commonSetup method for modloading
