@@ -14,9 +14,9 @@ public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, TutorialMod.MOD_ID);
     public static final RegistryObject<PlacedFeature> ZIRCON_ORE_PLACED = PLACED_FEATURES.register("zircon_ore_placed",()->new PlacedFeature(ModConfiguredFeatures.ZIRCON_ORE.getHolder().get(),commonOrePlacement(7,//veins per chunk
             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80),VerticalAnchor.aboveBottom(80)) ) ));
-    public static final RegistryObject<PlacedFeature> END_ZIRCON_ORE_PLACED = PLACED_FEATURES.register("end_zircon_ore_placed",()->new PlacedFeature(ModConfiguredFeatures.ZIRCON_ORE.getHolder().get(),commonOrePlacement(7,//veins per chunk
+    public static final RegistryObject<PlacedFeature> END_ZIRCON_ORE_PLACED = PLACED_FEATURES.register("end_zircon_ore_placed",()->new PlacedFeature(ModConfiguredFeatures.END_ZIRCON_ORE.getHolder().get(),commonOrePlacement(7,//veins per chunk
             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80),VerticalAnchor.aboveBottom(80)) ) ));
-    public static final RegistryObject<PlacedFeature> NETHER_ZIRCON_ORE_PLACED = PLACED_FEATURES.register("nether_zircon_ore_placed",()->new PlacedFeature(ModConfiguredFeatures.ZIRCON_ORE.getHolder().get(),commonOrePlacement(7,//veins per chunk
+    public static final RegistryObject<PlacedFeature> NETHER_ZIRCON_ORE_PLACED = PLACED_FEATURES.register("nether_zircon_ore_placed",()->new PlacedFeature(ModConfiguredFeatures.NETHER_ZIRCON_ORE.getHolder().get(),commonOrePlacement(7,//veins per chunk
             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80),VerticalAnchor.aboveBottom(80)) ) ));
 
     //defining how the configured features are placed by three private functions below

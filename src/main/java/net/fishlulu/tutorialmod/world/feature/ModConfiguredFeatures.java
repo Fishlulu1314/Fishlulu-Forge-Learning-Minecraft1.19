@@ -25,13 +25,13 @@ public class ModConfiguredFeatures
     //ZIRCON ORE replace in minecraft features
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ZIRCON_ORES = Suppliers.memoize(()->List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.ZIRCON_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES,ModBlocks.ZIRCON_ORE.get().defaultBlockState())
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES,ModBlocks.DEEPSLATE_ZIRCON_ORE.get().defaultBlockState())
     ));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> END_ZIRCON_ORES = Suppliers.memoize(()->List.of(
             OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE),ModBlocks.ENDSTONE_ZIRCON_ORE.get().defaultBlockState())
     ));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_ZIRCON_ORES = Suppliers.memoize(()->List.of(
-            OreConfiguration.target(OreFeatures.NETHERRACK,ModBlocks.NETHERRACK_ZIRCON_ORE.get().defaultBlockState())
+            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES,ModBlocks.NETHERRACK_ZIRCON_ORE.get().defaultBlockState())
     ));
     //register those features above
     public static final RegistryObject<ConfiguredFeature<?,?>> ZIRCON_ORE = CONFIGURED_FEATURES.register("zircon_ore",()->new ConfiguredFeature<>(Feature.ORE,new OreConfiguration(OVERWORLD_ZIRCON_ORES.get(),7)));
