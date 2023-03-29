@@ -1,6 +1,9 @@
 package net.fishlulu.tutorialmod.event;
 
 import net.fishlulu.tutorialmod.TutorialMod;
+import net.fishlulu.tutorialmod.networking.ModMessages;
+import net.fishlulu.tutorialmod.networking.packet.DrinkWaterC2SPacket;
+import net.fishlulu.tutorialmod.networking.packet.ExampleC2SPacket;
 import net.fishlulu.tutorialmod.util.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -20,7 +23,10 @@ public class ClientEvents {
         {
             if(KeyBinding.DRINKING_KEY.consumeClick())
             {
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Press a Key"));
+//                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Press a Key"));
+//                ModMessages.sendToServer(new ExampleC2SPacket());//C2S
+                ModMessages.sendToServer(new DrinkWaterC2SPacket());
+
             }
 
         }

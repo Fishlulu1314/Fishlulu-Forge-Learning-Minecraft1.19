@@ -3,6 +3,7 @@ package net.fishlulu.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.fishlulu.tutorialmod.block.ModBlocks;
 import net.fishlulu.tutorialmod.item.ModItems;
+import net.fishlulu.tutorialmod.networking.ModMessages;
 import net.fishlulu.tutorialmod.painting.ModPaintings;
 import net.fishlulu.tutorialmod.villager.ModVillagers;
 import net.fishlulu.tutorialmod.world.feature.ModConfiguredFeatures;
@@ -59,6 +60,8 @@ public class TutorialMod
         event.enqueueWork(()->{
             ModVillagers.registerPOIs();
         });
+        //outside the "enquenework",keep in mind!
+        ModMessages.register();
 
     }
 
