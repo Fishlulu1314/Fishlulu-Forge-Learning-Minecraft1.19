@@ -1,5 +1,6 @@
 package net.fishlulu.tutorialmod.networking.packet;
 
+import net.fishlulu.tutorialmod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -46,11 +47,26 @@ public class DrinkWaterC2SPacket {
                 player.sendSystemMessage(Component.translatable(MESSAGE_DRINK_WATER).withStyle(ChatFormatting.AQUA));
                 level.playSound(null,player.getOnPos(), SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS,0.5F,level.random.nextFloat()*0.1F+0.9F);
 
+                //increase the water level / thirst level of player
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(
+                        thirst->{thirst.addThirst(10);
+                        player.sendSystemMessage(Component.literal("Current Thirst level "+thirst.getThirst()).withStyle(ChatFormatting.AQUA));
+                        }
+                );
+                //output the current level
+
+
+
             }
             else {
                 //notify there's no water around
                 //output the current thirst level
                 player.sendSystemMessage(Component.translatable(MESSAGE_NO_WATER).withStyle(ChatFormatting.RED));
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(
+                        thirst->{
+                            player.sendSystemMessage(Component.literal("Current Thirst level "+thirst.getThirst()).withStyle(ChatFormatting.AQUA));
+                        }
+                );
             }
 
         });
