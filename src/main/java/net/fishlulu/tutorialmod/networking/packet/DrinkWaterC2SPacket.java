@@ -1,5 +1,6 @@
 package net.fishlulu.tutorialmod.networking.packet;
 
+import net.fishlulu.tutorialmod.networking.ModMessages;
 import net.fishlulu.tutorialmod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
@@ -51,7 +52,9 @@ public class DrinkWaterC2SPacket {
                 player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(
                         thirst->{thirst.addThirst(10);
                         player.sendSystemMessage(Component.literal("Current Thirst level "+thirst.getThirst()).withStyle(ChatFormatting.AQUA));
+                            ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()),player);
                         }
+
                 );
                 //output the current level
 
@@ -65,6 +68,7 @@ public class DrinkWaterC2SPacket {
                 player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(
                         thirst->{
                             player.sendSystemMessage(Component.literal("Current Thirst level "+thirst.getThirst()).withStyle(ChatFormatting.AQUA));
+                            ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()),player);
                         }
                 );
             }

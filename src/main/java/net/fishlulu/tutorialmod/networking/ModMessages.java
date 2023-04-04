@@ -3,6 +3,7 @@ package net.fishlulu.tutorialmod.networking;
 import net.fishlulu.tutorialmod.TutorialMod;
 import net.fishlulu.tutorialmod.networking.packet.DrinkWaterC2SPacket;
 import net.fishlulu.tutorialmod.networking.packet.ExampleC2SPacket;
+import net.fishlulu.tutorialmod.networking.packet.ThirstDataSyncS2CPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;
@@ -32,6 +33,11 @@ public class ModMessages  {
                 .encoder(DrinkWaterC2SPacket::toBytes)
                 .consumerMainThread(DrinkWaterC2SPacket::handle)
                 .add();
+        net.messageBuilder(ThirstDataSyncS2CPacket.class,id(), NetworkDirection.PLAY_TO_CLIENT).decoder(ThirstDataSyncS2CPacket::new)
+                .encoder(ThirstDataSyncS2CPacket::toBytes)
+                .consumerMainThread(ThirstDataSyncS2CPacket::handle)
+                .add();
+
 
 
     }
