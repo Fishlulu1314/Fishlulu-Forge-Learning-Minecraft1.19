@@ -58,10 +58,12 @@ public class TutorialMod
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         event.enqueueWork(()->{
+            ModMessages.register();
             ModVillagers.registerPOIs();
         });
         //outside the "enquenework",keep in mind!
-        ModMessages.register();
+        // ModMessages method in 1.19.1 has been moved to enquenework
+
 
     }
 
